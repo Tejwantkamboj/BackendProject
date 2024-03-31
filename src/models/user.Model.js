@@ -1,6 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+
+dotenv.config({path :  '../../.env'})
 
 const userSchema = new Schema(
     {
@@ -84,11 +87,5 @@ userSchema.methods.genrateRefreshToken = function () {
         }
     )
 }
-
-
-//console.log("ACCESS_TOKEN_EXPIRY", process.env.ACCESS_TOKEN_EXPIRY)
-//console.log("process.env.ACCESS_TOKEN_SECRET", process.env.ACCESS_TOKEN_SECRET)
-console.log("process.env.REFRESH_TOKEN_SECRE", process.env.REFRESH_TOKEN_SECRET)
-console.log("Aprocess.env.ACCESS_TOKEN_EXPIRY",process.env.ACCESS_TOKEN_EXPIRY)
 
 export const user = mongoose.model("User", userSchema);

@@ -2,10 +2,11 @@ import { connect } from 'mongoose';
 import DB_NAME from './../constants.js';
 import dotenv from 'dotenv';
 
-dotenv.config()
 
-const uri =process.env.MONGODB_URI;
-//console.log("here is uri" ,uri)
+dotenv.config({path : '../.env'})
+
+const uri = process.env.MONGODB_URI
+
 
 const connectDB = async ()=>{
 try{
