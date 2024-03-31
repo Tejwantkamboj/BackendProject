@@ -2,7 +2,6 @@ import mongoose, { Schema } from "mongoose";
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
-
 const userSchema = new Schema(
     {
         username: {
@@ -87,8 +86,9 @@ userSchema.methods.genrateRefreshToken = function () {
 }
 
 
-//console.log("ACCESS_TOKEN_EXPIRY", ACCESS_TOKEN_EXPIRY)
-console.log("process.env.ACCESS_TOKEN_SECRET", process.env.ACCESS_TOKEN_SECRET)
-
+//console.log("ACCESS_TOKEN_EXPIRY", process.env.ACCESS_TOKEN_EXPIRY)
+//console.log("process.env.ACCESS_TOKEN_SECRET", process.env.ACCESS_TOKEN_SECRET)
+console.log("process.env.REFRESH_TOKEN_SECRE", process.env.REFRESH_TOKEN_SECRET)
+console.log("Aprocess.env.ACCESS_TOKEN_EXPIRY",process.env.ACCESS_TOKEN_EXPIRY)
 
 export const user = mongoose.model("User", userSchema);

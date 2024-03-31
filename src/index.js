@@ -17,6 +17,12 @@ app.use(cookieParser());
 
 const PORT = process.env.PORT || 3000; 
 
+console.log("ACCESS_TOKEN_EXPIRY", process.env.ACCESS_TOKEN_EXPIRY)
+console.log("process.env.ACCESS_TOKEN_SECRET", process.env.ACCESS_TOKEN_SECRET)
+console.log("process.env.REFRESH_TOKEN_SECRE", process.env.REFRESH_TOKEN_SECRET)
+console.log("Aprocess.env.ACCESS_TOKEN_EXPIRY",process.env.ACCESS_TOKEN_EXPIRY)
+
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
