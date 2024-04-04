@@ -3,9 +3,10 @@ import DB_NAME from './../constants.js';
 import dotenv from 'dotenv';
 
 
-dotenv.config({path : '../.env'})
+dotenv.config()
 
 const uri = process.env.MONGODB_URI
+
 
 
 const connectDB = async ()=>{

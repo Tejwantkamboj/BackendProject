@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import dotenv from 'dotenv'
 
-dotenv.config({path :  '../../.env'})
+ dotenv.config({path :  '../../.env'})
 
 const userSchema = new Schema(
     {
@@ -87,5 +87,7 @@ userSchema.methods.genrateRefreshToken = function () {
         }
     )
 }
+
+//console.log( process.env.REFRESH_TOKEN_SECRET)
 
 export const user = mongoose.model("User", userSchema);
