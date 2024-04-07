@@ -2,24 +2,23 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
+import connectDB from '../database/index.js';
+
 
 dotenv.config({path :'../../.env'})
 
 
-const app = express();
-app.use(cors({
-   
-    credentials :true
+const appp = express();
+
+appp.use(cors({
+   credentials :true
 }));
 
-app.use(express.json({ limit: '16kb' }));
-app.use(express.urlencoded({ extended: true, limit: '16kb' }));
-app.use(express.static('public'));
-app.use(cookieParser());
-
-import router from '../routes/user.routes.js';
-
-app.use("/api/v1/ users", router)
+appp.use(express.json({ limit: '16kb' }));
+appp.use(express.urlencoded({ extended: true, limit: '16kb' }));
+appp.use(express.static('public'));
+appp.use(cookieParser());
 
 
-export { app }
+
+export default appp

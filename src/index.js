@@ -1,15 +1,19 @@
 import express from 'express';
-import dotenv from 'dotenv'
-import registerUser from './controllers/user.controller.js';
+import appp from './utils/app.js';
+import userRoutes from './routes/user.routes.js';
+import config from '../config.js';
 
-dotenv.config()
+
+
 
 const app = express();
-app.get('/', registerUser)
+ app.use('/', userRoutes);
 
 
-const PORT = process.env.PORT || 3000; 
 
-app.listen(4444, () => {
-    console.log(`app is listening at ${PORT}`);
+// const PORT = process.env.PORT || 3000; 
+
+app.listen(config.PORT, (req, res) => {
+  
+    console.log(`app is listening at ${config.PORT}`);
 });
