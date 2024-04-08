@@ -2,8 +2,8 @@ import express from 'express';
 import appp from './utils/app.js';
 import userRoutes from './routes/user.routes.js';
 import config from '../config.js';
-
-
+import dotenv  from 'dotenv';
+dotenv.config()
 
 
 const app = express();
