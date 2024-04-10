@@ -5,6 +5,7 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 const registerUser = async (req, res) => {
   const { fullname, email, username, password } = req.body;
+  console.log("req.body" , req.body)
   try {
 
     if (
@@ -12,7 +13,7 @@ const registerUser = async (req, res) => {
       throw new ApiError(400, "fields are required")
     }
 
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
       $or: [{ username }, { email }]
     });
 
